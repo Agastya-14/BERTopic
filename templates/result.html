@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil Topik</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Topik yang ditemukan</h1>
+
+    {% if topics %}
+        {% for topic in topics %}
+            <h2>Topik {{ topic.id }}</h2>
+            <ul>
+                {% for word, weight in topic.words %}
+                    <li>{{ word }} ({{ "%.4f"|format(weight) }})</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p style="text-align:center; color:#e74c3c; font-weight:bold;">
+            Tidak ada topik bermakna yang ditemukan pada dataset ini.
+        </p>
+    {% endif %}
+
+    <a href="/">Kembali</a>
+</body>
+</html>

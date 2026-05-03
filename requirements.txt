@@ -1,0 +1,8 @@
+flask
+bertopic
+umap-learn
+hdbscan
+transformers
+scikit-learn
+numpy
+pandas
