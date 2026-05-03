@@ -1,0 +1,6 @@
+myenv/
+bertopic_model/
+__pycache__/
+*.pyc
+*.pkl
+*.log
